@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <h2>Buy</h2>
+    <form action="/buy" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Input a stock symbol" type="text" list="shares-list">
+
+            <datalist id="shares-list">
+                <option>A</option>
+                <option>AA</option>
+                <option>AAPL</option>
+                <option>ABT</option>
+                <option>AMZN</option>
+                <option>COUR</option>
+                <option>EBAY</option>
+                <option>FUTU</option>
+                <option>KO</option>
+                <option>MSFT</option>
+                <option>MSI</option>
+                <option>NFLX</option>
+                <option>REGN</option>
+                <option>TSLA</option>
+                <option>PFE</option>
+                <option>PTON</option>
+            </datalist>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="Input amount of shares" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+{% endblock %}

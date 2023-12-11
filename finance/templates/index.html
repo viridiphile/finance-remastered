@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Main
+{% endblock %}
+
+{% block main %}
+<div class="first-section">
+    <div class="secondary-text-links">
+        <h1>Start <span class="blue">Trading</span> With Favourite Shares</h1>
+        <p>Our goal is to make the process of trading shares as easy and simple as possible</p>
+        <button id="get-started">Get Started</button>
+    </div>
+    <img id="main-pic" src="../static/uu.png" alt="Nice picture">
+</div>
+<div class="second-section">
+    <h2>Some latest trends</h2>
+    <div class="images">
+        {% for row in selected %}
+        <div class="image-text">
+            <p id="name"> {{ row["name"] }}({{ row["symbol"] }}) </p>
+            <p id="price"> {{ row["price"] | usd }} </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="container">
+
+</div>
+
+<script src="../static/js/script.js"></script>
+{% endblock %}
